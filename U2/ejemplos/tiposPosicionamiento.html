@@ -49,8 +49,8 @@ A partir de donde iría, puedo indicar distancias con:
 */
       .cajaRel {
         position: relative;
-        top: 40px;
-        left: 20px;
+        top: 50px;
+        left: 0px;
         width: 200px;
         height: 80px;
         display: inline;
@@ -63,23 +63,31 @@ Salen del flujo normal a otro plano.
 */
       .cajaAbs {
         position: absolute;
-        top: 140px;
-        left: 200px;
+        top: 0px;
+        left: 0px;
         width: 100px;
         height: 40px;
         display: inline;
+        z-index: 2;
       }
 
 /*Esta se queda clavada donde le decimos sin moverse*/
       .cajaFija{
         position: fixed;
-        top: 360px;
-        left: 200px;
+        top: 100px;
+        left: 50px;
         width: 100px;
         height: 40px;
         display: inline;
       }
-
+      .cajaPega{
+        position: sticky;
+        top: 20px;
+        left: 350px;
+        width: 100px;
+        height: 40px;
+        display: inline;
+      }
 
 /*El posicionamiento flotante sitúa al elemento lo más
 a la dcha o izqda posible (si es right o left respectivamente)
@@ -98,17 +106,20 @@ Los flotantes salen del flujo y se posicionan con flotantes
       .clear{
         clear:left;
       }
+      .cajaInlineB{
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
-    <div>
+    <!-- <div>
       <p>Las cajas están en posición estática.</p>
       <div class="cajaInline">caja1</div>
       <div class="cajaInline">caja2</div>
       <div class="cajaInline">caja3</div>
       <div class="cajaBlock">caja4</div>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <p>Las cajas están en posición estática, excepto la caja2, que está en posición relativa.</p>
       <div class="cajaInline">caja1</div>
       <div class="cajaRel">caja2</div>
@@ -121,21 +132,35 @@ Los flotantes salen del flujo y se posicionan con flotantes
       <div class="cajaAbs">caja2</div>
       <div class="cajaInline">caja3</div>
       <div class="cajaBlock">caja4</div>
-    </div>
-    <!-- <div>
+    </div> -->
+    <div>
       <p>Las cajas están en posición estática, excepto la caja2 que está en posición fija.</p>
       <div class="cajaInline">caja1</div>
       <div class="cajaFija">caja2</div>
       <div class="cajaInline">caja3</div>
       <div class="cajaBlock">caja4</div>
-    </div> -->
+    </div>
     <div>
+      <p>Las cajas están en posición estática.</p>
+      <div class="cajaInline">caja1</div>
+      <div class="cajaInline">caja2</div>
+      <div class="cajaInline">caja3</div>
+      <div class="cajaBlock">caja4</div>
+    </div>
+    <div>
+      <p>Las cajas están en posición estática, excepto la caja2 que está en posición fija.</p>
+      <div class="cajaInline">caja1</div>
+      <div class="cajaPega">caja2</div>
+      <div class="cajaInline">caja3</div>
+      <div class="cajaBlock">caja4</div>
+    </div>
+    <!-- <div>
       <p>Las cajas están en posición estática.</p>
       <div class="cajaBlock">caja1</div>
       <div class="cajaBlock">caja2</div>
       <div class="cajaBlock">caja3</div>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <p>Las cajas están en posición estática, excepto la caja2 que tiene un posicionamento flotante a la derecha.</p>
       <div class="cajaBlock">caja1</div>
       <div class="cajaFlotanteDerecha">caja2</div>
@@ -146,7 +171,7 @@ Los flotantes salen del flujo y se posicionan con flotantes
       <div class="cajaBlock">caja1</div>
       <div class="cajaFlotanteIzquierda">caja2</div>
       <div class="cajaBlock">caja3</div>
-    </div>
+    </div>-->
     <div>
       <p>Todas las cajas tienen un posicionamento flotante a la izquierda.</p>
       <div class="cajaFlotanteIzquierda">caja1</div>
