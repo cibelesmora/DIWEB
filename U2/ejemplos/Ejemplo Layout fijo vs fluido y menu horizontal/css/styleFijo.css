@@ -23,9 +23,6 @@ div.header{
   display: table; /*Compórtate como una tabla*/
   padding: 10px;
 }
-.corporativo{
-  display:table-row;
-}
 /*div.logo y h1 se comportan como celdas de la tabla*/
 .logo{
   display: table-cell;
