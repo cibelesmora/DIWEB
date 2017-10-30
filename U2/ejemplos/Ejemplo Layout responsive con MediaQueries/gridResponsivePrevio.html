@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive Layout</title>
+<style>
+
+/********** Estilo base **********/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+h1 {
+  margin-bottom: 15px;
+}
+.cabecera{
+  height: 80px;
+  border:1px solid black;
+  background: yellow;
+}
+.foto{
+  height: 80px;
+  border:1px solid black;
+  background: cyan;
+}
+.item{
+  height: 100px;
+  border:1px solid black;
+  background: orange;
+}
+.pie{
+  height: 40px;
+  border:1px solid black;
+  background: silver;
+}
+
+/**** Diseño en función de la resolución del dispositivo ****/
+
+/** Cualquier tamaño **/
+/* Cualquier elemento que tenga una clase que empieza por col- */
+[class *= "col-"] {
+  float: left;
+}
+
+
+/********** Dispositivos extra grandes (XL) **********/
+@media (min-width: 1200px) {
+  .col-1 { width: 8.33%;}
+  .col-2 { width: 16.66%;}
+  .col-3 { width: 25%;}
+  .col-4 { width: 33.33%;}
+  .col-5 { width: 41.66%;}
+  .col-6 { width: 50%;}
+  .col-7 { width: 58.33%;}
+  .col-8 { width: 66.66%;}
+  .col-9 { width: 75%;}
+  .col-10 { width: 83.33%;}
+  .col-11 { width: 91.66%;}
+  .col-12 { width: 100%;}
+}
+
+/********** Dispositivos grandes (LG) **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Aquí pongo el diseño para dispositivos grandes */
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="cabecera col-12"><h1>Responsive Layout</h1></div>
+  </div>
+  <div class="row">
+    <div class="foto col-4">Foto 1</div>
+    <div class="foto col-4">Foto 2</div>
+    <div class="foto col-4">Foto 3</div>
+  </div>
+  <div class="row">
+    <div class="item col-3"><p>Item 1</p></div>
+    <div class="item col-3"><p>Item 2</p></div>
+    <div class="item col-3"><p>Item 3</p></div>
+    <div class="item col-3"><p>Item 4</p></div>
+  </div>
+  <div class="row">
+    <div class="pie col-6">Pie</div>
+    <div class="pie col-6">Pie</div>
+    <div class="pie col-6">Pie</div>
+    <div class="pie col-6">Pie</div>
+  </div>
+</div>
+
+
+</body>
+</html>
