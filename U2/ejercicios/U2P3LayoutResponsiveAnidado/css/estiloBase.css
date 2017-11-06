@@ -1,0 +1,100 @@
+/*Reseteamos el modelo de cajas*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Estilo base*/
+body {
+  font-family: Lucida, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+  display: table; /*Compórtate como una tabla*/
+  width:100%;
+}
+/*div.logo y h1 se comportan como celdas de la tabla*/
+.logo{
+  display: table-cell;
+  vertical-align: middle;
+}
+.logo img{
+  max-width: 120px;
+  width: 75%;
+  height: auto;
+  margin: 10px;
+}
+.header h1{
+  vertical-align: middle;
+  display: table-cell;
+  text-transform: capitalize;
+}
+.footer {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  clear: both;
+}
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color :#33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+background-color: #0099cc;
+}
+
+.banner{
+  border:1px solid #33b5e5;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.banner img{
+  width:85%;
+  max-width: 200px;
+  height: auto;
+  margin:5px;
+}
+
+aside p {
+  height: 100px;
+  padding: 8px;
+  background-color :#33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col"] {
+  float: left;
+  padding: 15px;
+}
+
+section {
+  display:block;
+  flex: 1 0 auto;
+}
