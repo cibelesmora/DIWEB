@@ -4,17 +4,30 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="estilo.css">
     <script type="text/javascript">
-      function visualiza(elId) {
-        //selecciona los div dentro de contenido
-        var losDiv = document.getElementById("contenido").getElementsByTagName("div");
-        //oculta los div seleccionados
-        for(var i = 0; i < losDiv.length; i++){
-          losDiv[i].style.display = "none";
+      onload = function(){
+        //Inicialmente, ocultamos los contenidos excepto el de presentación
+        document.getElementById("primeros").style.display = "none";
+        document.getElementById("segundos").style.display = "none";
+        document.getElementById("postres").style.display = "none";
+
+        //seleccionamos los enlaces del menú de navegación y asociamos la función de visualización
+        var enlaces = document.querySelectorAll("#navegacion a");
+        for (var i = 0; i < enlaces.length; i++) {
+          enlaces[i].onclick = visualiza;
         }
-        //muestra el div indicado
-        document.getElementById(elId).style.display = "block";
-        // cancela el evento normal del enlace (equivale a e.preventDefault());
-        return false;
+        function visualiza(e) {
+          //selecciona los div dentro de contenido
+          var losDiv = document.getElementById("contenido").getElementsByTagName("div");
+          //oculta los div
+          for(var i = 0; i < losDiv.length; i++){
+            losDiv[i].style.display = "none";
+          }
+          //muestra el div indicado
+          var clase = e.target.getAttribute("class");
+          document.getElementById(clase).style.display = "block";
+          // cancela el evento normal del enlace (equivale a e.preventDefault());
+          return false;
+        }
       }
     </script>
   </head>
@@ -31,10 +44,10 @@
 
     <div id="navegacion">
       <ul>
-	       <li><a href="#presentacion" onclick="visualiza('presentacion');">Presentación</a></li>
-	       <li><a href="#primeros" onclick="visualiza('primeros');">Primer plato</a></li>
-	       <li><a href="#segundos" onclick="visualiza('segundos');">Segundo plato</a></li>
-	       <li><a href="#postres" onclick="visualiza('postres');">Postre</a></li>
+	       <li><a href="#presentacion" class="presentacion">Presentación</a></li>
+	       <li><a href="#primeros" class="primeros">Primer plato</a></li>
+	       <li><a href="#segundos" class="segundos">Segundo plato</a></li>
+	       <li><a href="#postres" class="postres">Postre</a></li>
        </ul>
      </div>
 <!-- Inicio de contenido -->
