@@ -11,7 +11,7 @@
         document.getElementById("postres").style.display = "none";
 
         //seleccionamos los enlaces del menú de navegación y asociamos la función de visualización
-        var enlaces = document.querySelectorAll("#navegacion a");
+        var enlaces = document.querySelectorAll("#navegacion a, h3 a");
         for (var i = 0; i < enlaces.length; i++) {
           enlaces[i].onclick = visualiza;
         }
@@ -64,13 +64,13 @@
   </p>
   <p>Bon Appetit!</p>
 
-  <h3><a href="#primeros" onclick="visualiza('primeros'); return false;">Entrantes y Primeros platos</a></h3>
+  <h3><a href="#primeros" class="primeros">Entrantes y Primeros platos</a></h3>
   Aperitivos, ensaladas, sopas y cremas.
 
-  <h3><a href="#segundos" onclick="visualiza('segundos'); return false;">Segundos: El plato fuerte!</a></h3>
+  <h3><a href="#segundos" class="segundos">Segundos: El plato fuerte!</a></h3>
   Pasta, arroces, carnes y pescados.
 
-  <h3><a href="#postres" onclick="visualiza('postres'); return false;">Deja hueco para los Postres</a></h3>
+  <h3><a href="#postres" class="postres">Deja hueco para los Postres</a></h3>
   Conoce las técnicas para cocinar los mejores postres caseros.
 </div>
 
